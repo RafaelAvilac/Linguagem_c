@@ -16,7 +16,7 @@ int main(){
 	printf("Quantos gols ja marcou na carreira: ");
 	scanf("%d", &gols);
 	
-	printf("\n\n*******Estatisticas*******\n");
+	printf("\n\n*******Estatisticas*******");
 	printf("\nNome: %s", nome);
 	printf("\nIdade: %d", idade);
 	printf("\nGols marcados: %d", gols);
