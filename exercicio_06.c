@@ -10,7 +10,7 @@ int main(){
     {
         printf("Pode jogar!");
     }else{
-        printf("Jogador está expulso da partida.");
+        printf("Jogador esta expulso da partida.");
     }
     
     return 0;
