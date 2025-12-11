@@ -12,12 +12,14 @@ int main(){
 	
 	printf("Informe numero de vitorias: ");
 	scanf("%d", &vitorias);
+	
 	printf("Informe numero de empates: ");
 	scanf("%d", &empates);
+	
 	printf("Informe numero de derrotas: ");
 	scanf("%d", &derrotas);
 	
-	total = (vitorias * 3) + (empates * 1) + 0;
+	total = (vitorias * 3) + empates;
 	
 	printf("O total de pontos obtidos e: %d",total);
 	

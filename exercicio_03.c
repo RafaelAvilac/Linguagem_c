@@ -5,15 +5,15 @@ Peça ao usuário para digitar o tempo jogado em minutos. Depois, converta esse va
 
 int main(){
 	
-	int minutos;
-	float horas;
+	int minutos, horas, min_restantes;
 	
 	printf("Informe quantos minutos jogou: ");
 	scanf("%d", &minutos);
 	
-	horas = (float)minutos / 60;
+	horas = minutos / 60;
+	min_restantes = minutos % 60;
 	
-	printf("Jogou %.2f", horas);
+	printf("Jogou %d horas e %d minutos ", horas, min_restantes);
 		
 	return 0;
 }
