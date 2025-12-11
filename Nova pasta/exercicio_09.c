@@ -18,13 +18,13 @@ int main(){
 
     if (idade <= 20 && gols > 10) {
         printf("Jovem talento promissor!\n");
-    } else if (idade <= 20 && gols <=10 ){
+    	} else if (idade <= 20 && gols <=10 ){
         printf("Jovem em desenvolvimento.\n");
-    } else if (idade > 20 && gols > 15) {
+    	} else if (idade > 20 && gols > 15) {
         printf("Jogador experiente em grande fase!\n");
-    } else if (idade > 20 && gols <= 15){
+        } else if (idade > 20 && gols <= 15){
         printf("Estevão");
-    }
+   		}
     
 
     return 0;

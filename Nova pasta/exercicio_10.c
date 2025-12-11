@@ -11,36 +11,37 @@ Com base na taxa de ocupação do estádio, o programa deve classificar a partida d
 
 int main(){
 	
-	float capacidade, quantidade, percentual;
+	int capacidade, quantidade;
+	float percentual;
 	
 	printf("Quantos torcedores cabem no estadio: ");
-	scanf("%f", &capacidade);
+	scanf("%d", &capacidade);
 	
 	printf("Quantos torcedores estao no estadio: ");
-	scanf("%f", &quantidade);
-	percentual = (quantidade / capacidade) * 100;
+	scanf("%d", &quantidade);
+	percentual = (float)quantidade / capacidade * 100;
 	
 	if (quantidade <= 0){
 		
 		printf("Informe uma quantidade valida");
 		
-	} else if ( quantidade > capacidade){
+		} else if ( quantidade > capacidade){
 		
-		printf("Erro capacidade nao permitida.");
+			printf("Erro capacidade nao permitida.");
 
-	} else if (percentual > 90) {
-		printf("Percentual: %.2f%%\n", percentual);
-		printf("\nLotado");
+		} else if (percentual > 90) {
+			printf("Percentual: %.2f%%\n", percentual);
+			printf("\nLotado");
 		
-	} else if (percentual >= 70) {
-		printf("Percentual: %.2f", percentual);
-		printf("\nOtima presença de publico!");
-	} else if (percentual >= 50) {
-		printf("Percentual: %.2f", percentual);
-		printf("\nPublico razoavel.");
-	} else {
-		printf("Percentual: %.2f", percentual);
-		printf("\nMorumbis");
+		} else if (percentual >= 70) {
+			printf("Percentual: %.2f%%", percentual);
+			printf("\nOtima presença de publico!");
+		} else if (percentual >= 50) {
+			printf("Percentual: %.2f%%", percentual);
+			printf("\nPublico razoavel.");
+		} else {
+			printf("Percentual: %.2f%%", percentual);
+			printf("\nMorumbis");
 		
 	}	
 	
