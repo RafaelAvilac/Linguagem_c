@@ -1,6 +1,11 @@
 #include <stdio.h>
 
 
+void exibir_mensagem(){
+	
+	printf("Ate logo!");
+}
+
 int somar(int a, int b){
 
 return a + b;		
@@ -18,7 +23,7 @@ int main(){
 	
 	resultado = somar(a, b);
 	
-	printf("Resultado de %d +  %d = %d", a, b, resultado);
-	
+	printf("Resultado de %d +  %d = %d\n", a, b, resultado);
+	exibir_mensagem();
 	return 0;
 }
