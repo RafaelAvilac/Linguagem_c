@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+/*1-Calcular a média de dois números
+
+Crie uma função que recebe duas notas (float) e retorna a média com 2 casas decimais.*/
 
 float verificar_media(float nota_1, float nota_2){
 	

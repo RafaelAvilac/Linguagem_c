@@ -3,21 +3,18 @@
 
 
 
-void verificacao(int numero){
+void verificar_paridade(int numero){
 	
 	if(numero % 2 == 0){
 	
-	printf("E par");
+	printf("E par\n");
 	
 	}else{
-	printf("E impar");
+		
+	printf("E impar\n");
 		
 	}
-	
-	
 }
-
-
 
 int main(){
 	
@@ -26,9 +23,8 @@ int main(){
 	
 	printf("Informe um numero: ");
 	scanf("%d", &numero);
+	
 	verificacao(numero);
-	
-	
-	
+		
 	return 0;
 }
