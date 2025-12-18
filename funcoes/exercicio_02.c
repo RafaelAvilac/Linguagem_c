@@ -11,8 +11,7 @@ int contar_vogais(char palavra[]){
 	int cont = 0;
 	
 	for(int i = 0; palavra[i] != '\0'; i++){
-		if(palavra[i] == 'a' || palavra[i] == 'e' || 
-  		   palavra[i] == 'i' || palavra[i] == 'o' || palavra[i] == 'u'){
+		if(palavra[i] == 'a' || palavra[i] == 'e' || palavra[i] == 'i' || palavra[i] == 'o' || palavra[i] == 'u'){
    		
 		    cont++;
 		}
