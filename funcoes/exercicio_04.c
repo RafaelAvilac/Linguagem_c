@@ -13,7 +13,7 @@ void verificar_nota(float nota){
 	
 	if(nota >= 6){
 		printf("Aprovado\n");
-	}else if(nota >= 4 && nota < 6){
+	}else if(nota >= 4 ){
 		printf("Recuperacao\n");
 	}else{
 		printf("Reprovado.");
