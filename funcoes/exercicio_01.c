@@ -16,7 +16,7 @@ float verificar_media(float nota_1, float nota_2){
 
 int main (){
 	
-	float nota_1, nota_2, media_final;
+	float nota_1, nota_2;
 	
 	printf("Informe a primeira nota: ");
 	scanf("%f", &nota_1);
@@ -24,9 +24,9 @@ int main (){
 	printf("Informe a segunda nota: ");
 	scanf("%f", &nota_2);
 	
-	media_final = verificar_media(nota_1, nota_2);
+	verificar_media(nota_1, nota_2);
 	
-	printf("Media das duas notas foi %.2f", media_final);
+	printf("Media das duas notas foi %.2f", verificar_media(nota_1, nota_2));
 	
 	return 0;
 }

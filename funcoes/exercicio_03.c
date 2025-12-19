@@ -5,10 +5,10 @@ Crie uma função que receba três inteiros e retorne o maior deles.*/
 
 int verificar_maior(int a, int b, int c){
 	int maior = 0;
-	if (a > b && a > c){
+	if (a >= b && a >=c){
 		
 		maior = a;
-	}else if(b > a && b > c){
+	}else if(b >= a && b >= c){
 		
 		maior = b;
 	}else {
