@@ -59,7 +59,7 @@ int main(){
 	
 	total_media = calcular_media(vetor);
 	
-	printf("A media foi %.2f", total_media);
+	printf("A media foi %.2f\n", total_media);
 	
 	classificar_media(total_media);
   
