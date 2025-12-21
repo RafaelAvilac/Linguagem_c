@@ -29,11 +29,22 @@ void preencher_quadrado(int lado, char carac){
 			printf(" %c ", carac);
 		}
 		printf("\n");
-	}
-	
-	
+	}	
 }
 
+void quadrado_vazado(int lado, char carac){
+	
+	for(int i = 0; i < lado; i++){
+        for(int j = 0; j < lado; j++){
+            if(i == 0 || i == lado - 1 || j == 0 || j == lado - 1){
+                printf(" %c ", carac);
+            } else {
+                printf("   ");
+            }
+        }
+        printf("\n");
+    }	
+}
 int main(){
 	setlocale(LC_ALL, "");
 	int lado;
@@ -42,6 +53,7 @@ int main(){
 	lado = receber_valor();
 	carac =  escolher_caracter();
 	preencher_quadrado(lado, carac);
-
+	printf("\n");
+	quadrado_vazado(lado, carac);
 	return 0;
 }
