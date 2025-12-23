@@ -16,6 +16,7 @@ int main (){
 	system("cls");
 	
 	printf("\n");
+	
 	for(int i = 0; i < 3; i++){
 		printf("Nome: %s\n", nomes[i]);
 	}

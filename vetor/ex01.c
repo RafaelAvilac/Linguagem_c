@@ -43,9 +43,8 @@ void exibir_sorteados(int sorteados[]){
 }
 int comparar_numeros(int numeros[], int sorteados[]){
 	int cont = 0;
-	for(int i = 0; i < 6; i++){
-		for(int j = 0; j < 6; j++){
-		
+	for(int i = 0; i < 6; i++){         //numeros
+		for(int j = 0; j < 6; j++){     //sorteados
 			if(numeros[i] == sorteados[j]){
 			cont++;
 			}
