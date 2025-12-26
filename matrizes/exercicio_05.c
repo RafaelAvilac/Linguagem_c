@@ -24,7 +24,7 @@ int main(){
 			scanf("%d", &numeros[i][j]);
 		}
 	}
-	system("cls");
+	printf("\033[2J\033[H");
 	for(int i = 0; i < 4; i++){
   	 	 for(int j = 0; j < 4; j++){
        		 if(i == j){
@@ -41,7 +41,7 @@ int main(){
     }
 }
 	
-	if(identidade == 1){
+	if(identidade){
 		
 	printf("Matriz e identidade.\n");
 	
@@ -51,10 +51,12 @@ int main(){
 	}		
 	
 		for(int i = 0; i < 4; i++){
+			printf("|");
 				for(int j = 0; j < 4; j++){
-					printf("%d\t", numeros[i][j]);
+					
+					printf("%3d ", numeros[i][j]);
 				}
-				printf("\n");
+				printf("|\n");
 			}
 	
 	

@@ -2,7 +2,6 @@
 
 int main(){
 	
-	
 	float notas[3][4], soma, media;
 	int i, j;
 	
@@ -16,7 +15,6 @@ int main(){
 		media = soma / 4;
 		printf("\n\nMedia do aluno %d: %.2f\n\n", i + 1, media);
 	}
-	
 	
 	return 0;
 }

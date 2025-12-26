@@ -25,9 +25,5 @@ int main(){
 		}
 	printf("Soma da diagonal principal: %d", soma);
 	
-	
-	
-	
-	
 	return 0;
 }

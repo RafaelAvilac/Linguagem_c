@@ -36,17 +36,19 @@ int main(){
 	}
 	printf("\nMatriz original: \n");
 	for(int i = 0; i < 3; i++){
+		printf("| ");
 		for(int j = 0; j < 2; j++){
-			printf("%d\t", numeros[i][j]);
+			printf(" %3d  ", numeros[i][j]);
 		}
-		printf("\n");
+		printf("|\n");
 	}
 		printf("\nMatriz transposta: \n");
 	for(int i = 0; i < 2; i++){
+		printf("| ");
 		for(int j = 0; j < 3; j++){
-			printf("%d\t", numeros[j][i]);
+			printf(" %3d  ", numeros[j][i]);
 		}
-		printf("\n");
+		printf("|\n");
 	}
 	return 0;
 }
