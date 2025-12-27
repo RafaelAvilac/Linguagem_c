@@ -14,9 +14,7 @@ int verificar_numeros(int numeros[]){
 		if(numeros[i] < 0){
 		
 			return 0;
-		}
-		
-		
+		}	
 	}
 		return 1;
 }

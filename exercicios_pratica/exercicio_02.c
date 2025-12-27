@@ -19,7 +19,7 @@ void preencher_numeros(int numeros[]){
 void verificar_maior_menor(int numeros[]){
 	int maior = numeros[0];
 	int menor = numeros[0];
-	for(int i = 0; i < 8; i++){
+	for(int i = 1; i < 8; i++){
 		
 		if(numeros[i] > maior){
 			maior = numeros[i];

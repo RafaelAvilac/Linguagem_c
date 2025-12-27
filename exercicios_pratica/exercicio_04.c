@@ -19,7 +19,7 @@ int verificar_paridade(int numeros[], int pares[]){
 }
 void exibir_pares(int pares[], int cont_pares){
 
-	printf("Total de %d números positívos.\n", cont_pares);
+	printf("Total de %d números pares.\n", cont_pares);
 	for(int i = 0; i < cont_pares; i++){
 		printf("%d\t", pares[i]);
 	}

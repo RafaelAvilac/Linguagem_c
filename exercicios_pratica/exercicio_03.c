@@ -53,7 +53,8 @@ int main(){
 		scanf("%d", &sair);
 			while(sair <0 || sair > 1){
 				printf("Opção inválida\n");
-					scanf("%d", &sair);
+				printf("Digite 0 para sair ou 1 para continuar: ");
+				scanf("%d", &sair);
 			}
 	}
 	
