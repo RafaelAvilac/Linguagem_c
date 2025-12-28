@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
-#include <string.h>
+
 
 
 void preencher(char nomes[][15]){
