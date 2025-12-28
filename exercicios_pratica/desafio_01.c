@@ -42,5 +42,6 @@ int main(){
     int total_carac = contar_nomes_com_caractere(nomes, carac);
     printf("\nO caractere '%c' foi encontrado em %d nome(s).\n", carac, total_carac);
     exibir_nomes(nomes, carac);
+    
 	return 0;
 }
