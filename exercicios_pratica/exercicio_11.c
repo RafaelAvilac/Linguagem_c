@@ -19,7 +19,7 @@ int main(){
 	char nome[15], carac;
 	int cont_total;
 	printf("Informe um nome: ");
-	scanf("%s", nome);
+	scanf("%14s", nome);
 	
 	printf("Informe um caractere para busca: ");
 	scanf(" %c", &carac);
@@ -34,7 +34,6 @@ int main(){
 			printf("O caractere %c não aparece na palavra.\n", carac);
 		
 	}
-	
-	
+		
 	return 0; 
 }
