@@ -13,7 +13,6 @@ int buscar_numero(int numeros[], int buscar){
 	for(int i = 0; i < 10; i++){
 		if(numeros[i] == buscar){
 			return 1;
-			break;
 		}
 	}
 	return 0;
