@@ -20,10 +20,9 @@ void exibir_numeros(int numeros[][3]){
 	for(int i = 0; i < 3; i++){
 		printf("|");
 		for(int j = 0; j < 3; j++){
-			printf("%3d ", numeros[i][j]);
-			
+			printf("%3d ", numeros[i][j]);	
 		}
-		printf("|\n");
+	printf("|\n");
 	}
 }
 

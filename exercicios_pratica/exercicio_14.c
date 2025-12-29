@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <locale.h>
 
+/*Crie um programa em C que:
+
+Leia uma matriz 2x3 de números inteiros
+
+Calcule a soma de todos os elementos da matriz
+
+Exiba o valor total da soma ao final*/
+
+
 void preencher_numeros(int numeros[2][3]){
 	
 	for(int i = 0; i < 2; i++){
@@ -35,6 +44,8 @@ int main(){
 setlocale(LC_ALL, "");
 	
 	int numeros[2][3], total;
+	
+	
 	preencher_numeros(numeros);
 	exibir_numeros(numeros);
 	total = calcular_elementos(numeros);
