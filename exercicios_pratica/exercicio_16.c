@@ -4,6 +4,12 @@
 #include <locale.h>
 #define TAM 3
 
+/*Crie um programa em C que:
+
+Leia uma matriz 3x3 de números inteiros
+Calcule a média dos elementos de cada coluna
+Exiba a média correspondente a cada coluna*/
+
 void preencher_numeros(float numeros[][TAM]){
 	
 	for(int i = 0; i < TAM; i++){

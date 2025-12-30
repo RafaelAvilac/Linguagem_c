@@ -45,8 +45,8 @@ void comparar_valor(int numeros[][TAM]){
 			}
 		}
 	}
-	printf("\nMaior valor: %d na posisão [%d][%d].\n", maior, lin_maior, col_maior);
-	printf("Menor valor: %d na posisão [%d][%d].\n", menor, lin_menor, col_menor);
+	printf("\nMaior valor: %d na posição [%d][%d].\n", maior, lin_maior, col_maior);
+	printf("Menor valor: %d na posição [%d][%d].\n", menor, lin_menor, col_menor);
 }
 int main(){
 	setlocale(LC_ALL, "Portuguese");

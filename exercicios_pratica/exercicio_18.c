@@ -7,6 +7,12 @@
 #define MIN 1
 #define MAX 100
 
+/*Crie um programa em C que:
+Leia uma matriz 4x4 de números inteiros
+Calcule a soma da diagonal principal da matriz
+Exiba o valor da soma ao final*/
+
+
 void preencher(int numeros[][TAM]){
 	for(int i = 0; i < TAM; i++){
 		for(int j = 0; j < TAM; j++){
@@ -46,7 +52,7 @@ int main(){
 	exibir(numeros);
 	total_diagonal = calcular_diagonal(numeros);
 	
-	printf("Soma da diagonal principal: %d", total_diagonal);
+	printf("\n\nSoma da diagonal principal: %d", total_diagonal);
 	
 	
 	

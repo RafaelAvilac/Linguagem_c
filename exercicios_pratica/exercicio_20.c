@@ -21,7 +21,7 @@ void preencher(int numeros[LIN][COL]){
 	}
 }
 void exibir(int numeros[LIN][COL]){
-	printf("\nMatriz Formatada.\n");
+	printf("\nMatriz Original.\n");
 	for(int i = 0; i < LIN; i++){
 		printf("| ");
 		for(int j = 0; j < COL; j++){
@@ -43,7 +43,7 @@ void exibir_transposta(int numeros[LIN][COL]){
 }
 int main(){
 	
-	setlocale(LC_ALL, "Poertuguese");
+	setlocale(LC_ALL, "Portuguese");
 	srand(time(NULL));
 	
 	int numeros[LIN][COL];
