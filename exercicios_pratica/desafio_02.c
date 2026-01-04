@@ -2,7 +2,7 @@
 #include <locale.h>
 
 #define LIN 5
-#define COL_N 15
+#define COL_N 50
 #define COL 3
 
 void preencher_notas(char nomes[][COL_N], int notas[][COL]){
