@@ -23,7 +23,7 @@ void inverter_numeros(int *numeros, int tam){
 
 }
 
-int main(){
+int main(void){
 	setlocale(LC_ALL, "Portuguese");
 	
 	int tam; 

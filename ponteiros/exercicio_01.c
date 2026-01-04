@@ -10,7 +10,7 @@ int somar(int *a, int *b){
 	return *a + *b; 
 }
 
-int main(){
+int main(void){
 	
 	int a, b, total;
 	

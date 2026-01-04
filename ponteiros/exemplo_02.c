@@ -3,12 +3,12 @@
 void troca(int *a, int *b){
 	int x;
 	
-	x = *a;
+     x = *a;
 	*a = *b; 
-*b = x;		
+    *b = x;		
 }
 
-int main(){
+int main(void){
 	
 	int a = 10, b = 20; 
 	
@@ -17,7 +17,6 @@ int main(){
 	troca(&a, &b);
 	
 	printf("\nAgora valor a = %d e b = %d.", 	a, b);
-	
 	
 	return 0;
 }
