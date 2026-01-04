@@ -23,7 +23,7 @@ void exibir(float *numeros, int n){
 }
 float media(float *numeros, int n){
 
-	float somar;
+	float somar = 0;
 	
 	for( int i = 0; i < n; i++){
 		somar += numeros[i]; 
