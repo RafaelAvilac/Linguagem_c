@@ -19,9 +19,13 @@ void inverter(char *str){
 int main(void){
 	
 	char *str = malloc(100 * sizeof(char));	
-	
+		if (str == NULL) {
+   		 printf("Erro de alocação de memória.\n");
+   		 return 1;
+		}
+		
 	printf("Digite uma string: ");
-	scanf(" %[^\n]", str);
+	scanf(" %99[^\n]", str);
 	inverter(str);	
 	printf("String invertida: %s", str);
 	
