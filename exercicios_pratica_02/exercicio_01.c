@@ -5,6 +5,7 @@ caso contrário, mantenha
 Use if e ponteiros
 Teste no main antes e depois da chamada*/
 #include<stdio.h>
+
 void verificar(int *a, int *b){
 	int temp;
 	if(*a > *b){
@@ -27,8 +28,8 @@ int main(void){
 	printf("Antes: a = %d, b = %d\n", a, b);
 	
 	verificar(&a, &b);
-	
-	printf("Retorndo de a: %d\nRetorno de b: %d", a, b);
+					
+	printf("Depois: a = %d, b = %d\n", a, b);
 	
 	return 0;
 }
