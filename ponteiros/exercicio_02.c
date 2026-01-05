@@ -23,7 +23,7 @@ void exibir(float *numeros, int n){
 }
 float media(float *numeros, int n){
 
-	float somar = 0;
+	float somar = 0.0;
 	
 	for( int i = 0; i < n; i++){
 		somar += numeros[i]; 
@@ -34,7 +34,8 @@ float media(float *numeros, int n){
 }
 
 int main(void){
-	setlocale(LC_ALL, "Portuguese");	
+	setlocale(LC_ALL, "Portuguese");
+		
 	int n; 
 	float *numeros;
 	
