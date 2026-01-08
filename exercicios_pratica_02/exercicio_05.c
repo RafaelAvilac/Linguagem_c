@@ -37,9 +37,9 @@ void menu(void){
 }
 int validar_opcao(int *opcao) {
     // Valida e retorna 1 para continuar, 0 para sair
-    while(*opcao < 0 || *opcao > 5) {
+    while(*opcao < 0 || *opcao > 4) {
         printf("Opção inválida!\n");
-        printf("Digite uma opção válida (0-5): ");
+        printf("Digite uma opção válida (0-4): ");
         scanf("%d", opcao);    
     }
     return (*opcao != 0); // Retorna 0 se escolheu sair, 1 caso contrário
@@ -96,9 +96,15 @@ int main(void){
 	int continuar = 1;
 	printf("Informe o tamanho do vetor: ");
 	scanf("%d", &tam);
-	
+	while(tam <= 0){
+   	 	printf("Informe um tamanho válido: ");
+   		scanf("%d", &tam);
+	}
 	numeros = calloc(tam, sizeof(*numeros));
-	
+	if(numeros == NULL){
+    	printf("Erro ao alocar memória.\n");
+   		 return 1;
+	}
 	preencher(numeros, tam);
 	
 	while(continuar){
@@ -121,8 +127,12 @@ int main(void){
                			soma_media(numeros, tam);
                			 break;
                     case 3:
-                		 contagem(numeros,tam, &cont_p, &cont_i);
-                		 printf("\n\nTotal de pares: %d\nTotal de impares: %d\n\n", cont_p, cont_i);
+                    	
+                    	cont_p = 0;
+						cont_i = 0;
+                		contagem(numeros,tam, &cont_p, &cont_i);
+                		printf("\n\nTotal de pares: %d\nTotal de impares: %d\n\n", cont_p, cont_i);
+                		
                          break;
                    case 4:
                			inverter(numeros, tam);
