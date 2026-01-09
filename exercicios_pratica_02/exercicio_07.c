@@ -67,5 +67,6 @@ int main(void){
 	modificar(numeros, tamanho);
 	vetor_modificado(numeros, tamanho);
 	
+	free(numeros);
 	return 0;
 }

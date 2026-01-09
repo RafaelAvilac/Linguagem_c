@@ -19,7 +19,7 @@ int main(void){
 	printf("Informe quantidade de colunas: ");
 	scanf("%d", &colunas);
 	
-	matriz = malloc(linhas * sizeof(*matriz));
+	matriz = malloc(linhas * sizeof(int *));
 	if(matriz == NULL){
 		printf("ERRO");
 		return 1;
@@ -27,8 +27,8 @@ int main(void){
 	
 	for(int i = 0; i < linhas; i++){
 		soma = 0;
-		matriz[i] = malloc(colunas * sizeof(*matriz));
-			if(matriz == NULL){
+		matriz[i] = malloc(colunas * sizeof(int *));
+			if(matriz [i] == NULL){
 			printf("ERRO");
 			return 1;
 		}
