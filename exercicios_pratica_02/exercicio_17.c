@@ -16,7 +16,7 @@ Conte quantos números são ímpares*/
  	setlocale(LC_ALL, "");
  	srand(time(NULL));
  	
- 	int numeros[10], par = 0, impar = 0;	
+ 	int numeros[TAM], par = 0, impar = 0;	
 	
 	for(int i = 0; i < TAM; i++){
 		numeros[i] = rand() % 100 + 1;	

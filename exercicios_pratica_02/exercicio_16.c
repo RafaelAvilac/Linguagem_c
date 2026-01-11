@@ -20,17 +20,13 @@ int numeros[10], maior, menor;
 for(int i = 0; i < TAM; i++){
 	printf("Informe o %dº número: ", i + 1);
 	scanf("%d", &numeros[i]);
-	
-	if(numeros[i] < 0){
-		i--;
-	
-	}
+
 }	
 
-for(int i = 1; i < TAM; i++){
-	
 	maior = numeros[0];
 	menor = numeros[0];
+
+for(int i = 1; i < TAM; i++){
 	
 	if(numeros[i] > maior){
 		maior = numeros[i];
