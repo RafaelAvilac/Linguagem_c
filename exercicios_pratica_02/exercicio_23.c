@@ -20,7 +20,7 @@ int main(void){
 	
 	printf("Nome: %s", nome);
 
-     size_t	tamanho = strlen(nome);
+    size_t tamanho = strlen(nome);
      
      if (tamanho > 0 && nome[tamanho - 1] == '\n'){
      	
@@ -28,7 +28,7 @@ int main(void){
      	tamanho--;
 	 }
 	
-	printf("Tamanho: %d", tamanho);
+	printf("Tamanho da String: %zu", tamanho);
 	
 	return 0;
 }
