@@ -6,6 +6,7 @@
 int main(void){
 	setlocale(LC_ALL, "Portuguese");
 	char palavra[30];
+	int  cont = 0;
 	
 	printf("Digite seu nome: ");
 	//scanf("%s", palavra);
@@ -15,11 +16,10 @@ int main(void){
 	//gets(palavra);
 	fgets(palavra, 30, stdin);
 	for(int i = 0; palavra[i] != '\0'; i++){
-		
-		printf("%d = %c\n",i, palavra[i]);
-		printf("\n");
+		if(palavra[i] != '\n'){
+			cont++;
+		}
 	}
-	
-	
+	printf("total caravteres: %d", cont);
 	return 0;
 }
