@@ -45,30 +45,7 @@ for(int i = 0; i < LIN; i++){
 	}
 	printf("\nA soma da %dº linhas é: %3d\n",i +1, soma_linha);
 }
-	printf("A soma total dos elementos da MAtriz é: %3d\n", soma_total);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	printf("A soma total dos elementos da Matriz é: %3d\n", soma_total);
 
 return 0;
 }

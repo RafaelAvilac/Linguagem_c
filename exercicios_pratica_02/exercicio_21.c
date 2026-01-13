@@ -36,7 +36,7 @@ void calcular_maior_menor(int *numeros,int *maior, int *menor){
 	*maior = numeros[0];
 	*menor = numeros[0];
 	
-	for(int i = 0; i < TAM; i++){
+	for(int i = 1; i < TAM; i++){
 		if(numeros[i] > *maior){
 			*maior = numeros[i];
 		}
@@ -50,7 +50,7 @@ int main(void){
 	setlocale(LC_ALL, "Portuguese");
 	srand(time(NULL));
 	
-	int numeros[TAM], soma = 0, maior = 0, menor = 0;
+	int numeros[TAM], soma = 0, maior, menor;
 	float media = 0;
 	
 	for(int i = 0; i < TAM; i++){
@@ -71,8 +71,6 @@ int main(void){
 
 	calcular_maior_menor(numeros, &maior, &menor);
 	printf("\n\nMaior nº %d\nMenor nº %d\n", maior, menor);
-	
-	
 	
 	
 	return 0;

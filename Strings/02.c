@@ -10,11 +10,10 @@ int main(void){
 	
 	printf("Digite seu nome: ");
 	//scanf("%s", palavra);
-
-   //scanf("%30[^\n]", palavra);
-
+    //scanf("%30[^\n]", palavra);
 	//gets(palavra);
 	fgets(palavra, 30, stdin);
+	//contando string sem o \n e \0.
 	for(int i = 0; palavra[i] != '\0'; i++){
 		if(palavra[i] != '\n'){
 			cont++;
