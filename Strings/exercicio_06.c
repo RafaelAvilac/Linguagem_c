@@ -25,12 +25,16 @@ int main(void){
 	size_t tamanho = strlen(origem);
 	if(tamanho > 0 && origem[tamanho - 1] == '\n'){
 		origem[tamanho - 1] = '\0';
+		tamanho--;
 	}
 	
-	for(int i = 0; i < tamanho; i++){
+	int i;
+	for( i = 0; i < tamanho; i++){
 		destino[i] = origem[i];
 	}
-
+	destino[i] = '\0';
+	
+	
 	printf("Principal: %s \n", origem);
 	printf("Copia: %s \n", destino);
 	
