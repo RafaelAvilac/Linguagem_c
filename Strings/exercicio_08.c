@@ -20,13 +20,12 @@ int main(void){
 	
 	size_t tamanho = strlen(nome);
 	
-	printf("\n\nString original: %s\n", nome);
-	
 	if(tamanho > 0 && nome[tamanho - 1] == '\n'){
 		nome[tamanho - 1] = '\0';
 		tamanho--;
 	}
 	
+	printf("\n\nString original: %s\n", nome);
 	strcpy(nome_2, nome);
 	
 	printf("String copia: %s\n", nome_2);

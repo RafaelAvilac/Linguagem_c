@@ -27,16 +27,14 @@ int main(void){
 		primeira[tam_1 - 1] = '\0';
 		tam_1--;
 	}
-	if(tam_2 > 0 && primeira[tam_2 -1] == '\n'){
-		primeira[tam_2 - 1] = '\0';
+	if(tam_2 > 0 && segunda[tam_2 -1] == '\n'){
+		segunda[tam_2 - 1] = '\0';
 		tam_2--;
 	}
 	
 	strcat(primeira, segunda);
 	
 	printf("\n%s\n", primeira);
-	
-	
 	
 	return 0;
 }

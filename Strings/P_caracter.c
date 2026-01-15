@@ -8,7 +8,7 @@ int main(void ){
 char palavra[50] = {"abacate"};
 char *letra;
 
-letra = strrchr(palavra, 'a');
+letra = strrchr(palavra, '');
 
 printf("\n%c\n", *letra); 
 printf("\n%c\n", *(letra + 1)); 
