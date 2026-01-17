@@ -34,7 +34,6 @@ int main(void){
 	
 	char frase[TAM];
 
-	
 	printf("Digite uma frase: ");
 	fgets(frase, TAM, stdin);
 	frase[strcspn(frase, "\n")] = '\0'; //troca \n por \0
@@ -46,7 +45,5 @@ int main(void){
 	
 	printf("\n\nA frase possui %d vogáis.\n",cont);
 
-
-		
 	return 0;
 }
