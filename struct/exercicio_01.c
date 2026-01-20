@@ -20,6 +20,8 @@ Saída: Exiba o resultado no formato:
 "O aluno [Nome] obteve média [Média]"*/
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define TAM 100
 
