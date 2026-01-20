@@ -4,21 +4,16 @@
 #include <ctype.h>
 
 typedef struct{
-
 	char nome_rua[100];
 	char bairro[100];
 	int numero_casa;
-
-
 }Endereco;
+
 typedef struct{
-	
 	Endereco endereco;
-	
 	char nome[100];
 	char sexo;
 	int idade;
-
 }Pessoa;
 
 int main(void){
