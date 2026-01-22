@@ -26,7 +26,7 @@ int main(void){
 	
 	if(isalpha(caract)){
 		if(isupper(caract)){
-		printf("É uma letra maiuscula.\n");
+		printf("E uma letra maiuscula.\n");
 		}
 		if(islower(caract)){
 			printf("E uma letra minuscula.\n");

@@ -19,7 +19,5 @@ int main(void){
 		printf("\t%3d x %3d = %3d\n", numero, i, numero * i);
 	}
 	
-	
-	
 	return 0;
 }
