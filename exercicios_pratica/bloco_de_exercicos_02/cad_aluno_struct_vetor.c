@@ -32,14 +32,15 @@ Critério de aprovação: média = 6.0*/
 
 #include <stdio.h>
 #include <locale.h>
-
+#include <string.h>
 
 struct Aluno{
 	
 	char nomes[100];
 	float nota1;
 	float nota2;
-	
+	float media_final;
+	char situacao[100];
 };
 
 void preencher_dados(struct Aluno alunos [], int n){
@@ -49,6 +50,7 @@ void preencher_dados(struct Aluno alunos [], int n){
 		
 		printf("Nome: ");
 		fgets(alunos[i].nomes, 100, stdin);
+		alunos[i].nomes[strcspn(alunos[i].nomes, "\n")] = '\0';
 		
 		printf("Nota 1: ");
         scanf("%f", &alunos[i].nota1);
@@ -57,22 +59,41 @@ void preencher_dados(struct Aluno alunos [], int n){
         scanf("%f", &alunos[i].nota2);
         
         while(getchar() != '\n');
-	}
-	
+	}	
 }
 
 void media(struct Aluno alunos[], int n){
 	
- printf("\n=== MÉDIAS DOS ALUNOS ===\n");
- 
 	for(int i = 0; i < n; i++){
-		float media = (alunos[i].nota1 + alunos[i].nota2) / 2.0;
-		
-		printf("\nAluno %d: %s\n", i + 1, alunos[i].nomes);
-        printf("Nota 1: %.2f | Nota 2: %.2f | Média: %.2f\n", alunos[i].nota1, alunos[i].nota2, media);
+		alunos[i].media_final = (alunos[i].nota1 + alunos[i].nota2) / 2.0;
+			
 	}
 }
 
+void situacao_aluno(struct Aluno alunos[], int n){
+	
+	for(int i = 0; i < n;i++){
+		if(alunos[i].media_final >= 6){
+			 strcpy(alunos[i].situacao, "Aprovado"); 
+		}else{
+			strcpy(alunos[i].situacao, "Reprovado");
+		}
+		
+	}
+	
+}
+void exibir_resultados(struct Aluno alunos[], int n){
+    printf("\n=== RESULTADOS FINAIS ===\n");
+    
+    for(int i = 0; i < n; i++){
+        printf("\n--- Aluno %d ---\n", i + 1);
+        printf("Nome: %s\n", alunos[i].nomes);
+        printf("Nota 1: %.2f\n", alunos[i].nota1);
+        printf("Nota 2: %.2f\n", alunos[i].nota2);
+        printf("Média: %.2f\n", alunos[i].media_final);
+        printf("Situação: %s\n", alunos[i].situacao);
+    }
+}
 
 int main(void){
 	setlocale(LC_ALL, "Portuguese_Brazil");
@@ -86,6 +107,7 @@ int main(void){
 	
 	preencher_dados(alunos, n);
 	media(alunos, n);
+	exibir_resultados(alunos, n);
 	
 	return 0;
 }
