@@ -107,6 +107,7 @@ int main(void){
 	
 	preencher_dados(alunos, n);
 	media(alunos, n);
+	situacao_aluno(alunos, n);
 	exibir_resultados(alunos, n);
 	
 	return 0;
