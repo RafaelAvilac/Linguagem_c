@@ -74,7 +74,7 @@ void exibir(Veiculo veiculos[], int n){
 		printf("\tModelo: %s\n", veiculos[i].modelo);
 		printf("\tAno: %d\n", veiculos[i].ano);
 		printf("\tValor: %.2f\n", veiculos[i].valor);
-		printf("\tSituação: %s", veiculos[i].classif);
+		printf("\tSituação: %s\n", veiculos[i].classif);
 	}
 }
 
