@@ -57,7 +57,7 @@ void preencher(Paciente p_1[], int qtd){
 		
 		printf("Altura: ");
 		scanf("%f", &p_1[i].altura);
-		while(p_1[i].altura < 1){
+		while(p_1[i].altura > 0){
 			printf("Valor digitado inválido: ");
 			scanf("%f", &p_1[i].altura);
 		}
@@ -87,7 +87,7 @@ void exibir(Paciente p_1[], int qtd){
 		printf("\n\n======= Relatório dos Pacientes ======\n");
 	for(int i = 0; i < qtd; i++){
 		
-		printf("\tNome: %s", p_1[i].nome);
+		printf("\tNome: %s\n", p_1[i].nome);
 		printf("\tPeso: %.2f\n", p_1[i].peso);
 		printf("\tAltura: %.2f\n", p_1[i].altura);
 		printf("\tIMC: %.2f", p_1[i].imc);
