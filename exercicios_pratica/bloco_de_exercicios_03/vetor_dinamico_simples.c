@@ -16,9 +16,9 @@ alocação básica, acesso por índice, free*/
 #include <locale.h>
 
 void validar_n(int *n){
-		while(*n < 0){
-		printf("Digite um valor valido: ");
-		scanf("%d", &n);
+		while(*n < 1){
+		printf("Digite um valor valido (maior que 0): ");
+		scanf("%d", n);
 	}
 }
 	

@@ -62,7 +62,7 @@ int main(void){
 	}
 	
 	preencher_vetor(numeros, qtd);
-	resultado = somar_elementos(numeros, qtd),
+	resultado = somar_elementos(numeros, qtd);
 	exibir(numeros, qtd);
 	printf("\nResultado da soma dos elementos: %4d\n", resultado);
 	
