@@ -37,7 +37,7 @@ void calcular_linha(int matriz[][COL]){
 }
 int main(void){
 	setlocale(LC_ALL, "Portuguese_Brazil");
-	int matriz[LIN][COL], resultado;
+	int matriz[LIN][COL];
 	
 	preencher(matriz);
 	exibir(matriz);

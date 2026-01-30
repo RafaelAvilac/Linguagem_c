@@ -40,7 +40,7 @@ int main(void){
 	preencher(matriz);
 	exibir(matriz);
     resultado =	calcular_elementos(matriz);
-	printf("Resultado da soma detodos os elementos: %d", resultado);
+	printf("Resultado da soma de todos os elementos: %d\n", resultado);
 	return 0;
 }
 
