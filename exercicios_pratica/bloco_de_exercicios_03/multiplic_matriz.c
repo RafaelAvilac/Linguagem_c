@@ -24,7 +24,7 @@ void preencher_matrizes(int a[][A_COL],int b[][B_COL]){
 		}
 	}
 }
-void multipicar(int a[][A_COL],int b[][B_COL], int c[][C_COL]){
+void multiplicar(int a[][A_COL],int b[][B_COL], int c[][C_COL]){
 	 // Inicializar C com zeros
 	for(int i = 0; i < C_LIN; i++){         	
 		for(int j = 0; j < C_COL; j++){         
@@ -78,7 +78,7 @@ int main(void){
 	
 	int a[A_LIN][A_COL], b[B_LIN][B_COL], c[C_LIN][C_COL]; 
 	preencher_matrizes(a, b);
-	multipicar(a, b, c);
+	multiplicar(a, b, c);
 	printf("\n========== MULTIPLICAÇÃO DE MATRIZES ==========\n\n");
 	printf("Matriz A (%dx%d):\n", A_LIN, A_COL);
 	exibir_matriz_a( a);
