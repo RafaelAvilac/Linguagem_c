@@ -75,6 +75,6 @@ int main(void){
 	printf("\n\nMédia: %.2f\n", media);
 
 	
-	
+	free(notas);
 	return 0;
 }
