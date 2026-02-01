@@ -25,7 +25,7 @@ void verificar_login(int senha_sistema){
 			scanf("%d", &senha_digitada);
 			while(getchar() != '\n');
 		}
-			while(getchar() != '\n');
+		
 			
 		if(senha_digitada == senha_sistema){
 			printf("\n\tAcesso Permitido.\n");
@@ -36,7 +36,7 @@ void verificar_login(int senha_sistema){
 		
 		
 	}while(cont <= 3);
-		printf("\n\tAcesso Bloqueado.\nExedeu o máximo de 3 tentativas");
+		printf("\n\tAcesso Bloqueado.\nExcedeu o máximo de 3 tentativas");
 }
 
 int main(void){
