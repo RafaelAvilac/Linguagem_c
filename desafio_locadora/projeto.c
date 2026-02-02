@@ -78,10 +78,15 @@ void cadastrar_filmes(Filme *filmes, int *total_filmes){
 	// O loop deve continuar enquanto o usuário não digitar 'n' e houver espaço
 	while(sair != 'n' && i < TAM_MAX){
 	
-		printf("\nNome do %dº filme: ", i + 1);
-		fgets(filmes[i].nome, sizeof(filmes[i].nome), stdin);
-		filmes[i].nome[strcspn(filmes[i].nome, "\n")] = '\0';
-		maiuscula(filmes[i].nome);
+		do {
+   			 printf("\nNome do %dº filme: ", i + 1);
+   			 fgets(filmes[i].nome, sizeof(filmes[i].nome), stdin);
+   			 filmes[i].nome[strcspn(filmes[i].nome, "\n")] = '\0';
+    
+   				if(strlen(filmes[i].nome) == 0) {
+       				 printf("Erro: Nome não pode estar vazio!\n");
+   				 }
+		} while(strlen(filmes[i].nome) == 0);
 		
 		 int entrada_valida = 0;
 		while(!entrada_valida) {
