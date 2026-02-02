@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <locale.h>
 #include <ctype.h>
@@ -6,6 +7,7 @@
 #define TAM_MAX 10
 #define ANO_MIN 1972
 #define ANO_ATUAL 2026
+
 typedef struct{
 	char nome[100];
 	int ano;
@@ -14,13 +16,19 @@ typedef struct{
 	char locatario[100];
 }Filme;
 void limpar_tela() {
-    printf("\033[2J\033[H");
+    system("cls");  
 }
 
 void maiuscula(char *str){
 	for(int i = 0; str[i] != '\0'; i++){
 		str[i] = toupper((unsigned char)str[i]);
 	}
+}
+void continuar(){
+	printf("\nPressione Enter para continuar...");
+	    while(getchar() != '\n');
+	
+		printf("\n");
 }
 
 void menu( ){
@@ -59,14 +67,15 @@ void validar_opcao(int *opcao){
 void cadastrar_filmes(Filme *filmes, int *total_filmes){
 
 	char sair = 's';
+	int i = *total_filmes;
 	
 	if(*total_filmes >= TAM_MAX){
 		printf("Não é possível cadastrar filmes.\nLimite atingido.\n");
 		return;
 	}
-	int i = *total_filmes;
+
 	printf("====== Cadastro de Filmes =====\n");
-	// Correção: O loop deve continuar enquanto o usuário não digitar 'n' e houver espaço
+	// O loop deve continuar enquanto o usuário não digitar 'n' e houver espaço
 	while(sair != 'n' && i < TAM_MAX){
 	
 		printf("\nNome do %dº filme: ", i + 1);
@@ -111,17 +120,67 @@ void cadastrar_filmes(Filme *filmes, int *total_filmes){
 	printf("=====================================\n");
 }
 
-
+void listar_filmes(Filme filmes[], int total_filmes){
+	
+	if(total_filmes == 0){
+		printf("Nenhum filme cadastrado.\n\n");
+		continuar();
+		return;
+	}
+	
+	printf("\nFilmes cadastrados.\n\n");
+	for(int i = 0; i < total_filmes; i++){
+		printf("\tNome: %s\n", filmes[i].nome);
+		printf("\tAno: %d\n", filmes[i].ano);
+		printf("\tVezes locado: %d\n", filmes[i].vezes_locado);
+		printf("\tStatus: %c\n", filmes[i].status);
+	}
+		continuar();
+		
+}
+void filmes_locados(Filme filmes[], int total_filmes){
+	if(total_filmes == 0){
+		printf("Nenhum filme cadastrado.\n");
+	    continuar();
+	    return;
+	}
+	for(int i = 0; i < total_filmes; i++){
+		if(filmes[i].status != 'D'){
+			printf("\tNome: %s\n", filmes[i].nome);
+			printf("\tAno: %d\n", filmes[i].ano);
+			printf("\tVezes locado: %d\n", filmes[i].vezes_locado);
+		}
+	}
+}
 int main(void){
 	setlocale(LC_ALL, "Portuguese_Brazil");
 	int opcao;
 	int total_filmes = 0;
 	Filme filmes[TAM_MAX];	
 	
-	menu();
-	validar_opcao(&opcao);
-	limpar_tela();
-	cadastrar_filmes(filmes, &total_filmes);
+	do{
+		menu();
+	
+		validar_opcao(&opcao);
+		limpar_tela();
+			switch(opcao){
+			
+				case 1:
+				cadastrar_filmes(filmes, &total_filmes);
+				
+				
+					break;
+				case 2:
+					listar_filmes(filmes, total_filmes);
+				
+					break;
+				case 3:
+					filmes_locados(filmes, total_filmes);
+					break;
+			}
+	
+	}while(opcao != 0);
+	
 	
 	
 return 0;	
