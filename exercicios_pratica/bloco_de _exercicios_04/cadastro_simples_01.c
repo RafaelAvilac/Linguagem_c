@@ -79,7 +79,7 @@ void exibir_todos(Cadastro *pessoas, int qtd){
 }
 
 void exibir_maior_idade(Cadastro *pessoas,int qtd){
-		printf("\n\n<<- RELATORIO DE ALUNOS MAIORES DE IDADE ->>\n");
+	printf("\n\n<<- RELATORIO DE ALUNOS MAIORES DE IDADE ->>\n");
     printf("----------------------------------------------------------\n");
     printf("INDICE | NOME                                     | IDADE\n");
     printf("----------------------------------------------------------\n");
@@ -90,7 +90,53 @@ void exibir_maior_idade(Cadastro *pessoas,int qtd){
 				
 			}
 		}
+}
+void exibir_ordenado(Cadastro *pessoas,int qtd){
+	
+	Cadastro aux;
+	
+	for(int i = 0; i < qtd; i++){
+		
+		for(int j = 0; j < qtd - 1; j++){
+				if(strcmp(pessoas[j].nome, pessoas[j +1].nome) > 0){
+				aux = pessoas[j];
+				pessoas[j] = pessoas[j + 1];
+				pessoas[j + 1] = aux;
+				
+	        	}
+		}
+	}
+	printf("\n\n<<- RELATORIO DE ALUNOS POR ORDEM ALFABETICA ->>\n");
+    printf("----------------------------------------------------------\n");
+    printf("INDICE | NOME                                     | IDADE\n");
+    printf("----------------------------------------------------------\n");
+		for(int i = 0; i < qtd; i++){
+			printf("%02d     | %-40s | %d anos\n", i+1, pessoas[i].nome, pessoas[i].idade);
+			printf("----------------------------------------------------------\n");
+		}
+}
+void ordenar_por_idade(Cadastro *pessoas, int qtd) {
+    Cadastro aux;
+    for (int i = 0; i < qtd; i++) {
+        for (int j = 0; j < qtd - 1; j++) {
+            
+            if (pessoas[j].idade > pessoas[j + 1].idade) {
+                
+                aux = pessoas[j];
+                pessoas[j] = pessoas[j + 1];
+                pessoas[j + 1] = aux;
+            }
+        }
+    }
+    printf("\n\n<<- RELATORIO DE ALUNOS POR IDADE (CRESCENTE) ->>\n");
+    printf("----------------------------------------------------------\n");
+    printf("INDICE | NOME                                     | IDADE\n");
+    printf("----------------------------------------------------------\n");
 
+    for (int i = 0; i < qtd; i++) {
+        printf("%02d     | %-40s | %d anos\n", i + 1, pessoas[i].nome, pessoas[i].idade);
+        printf("----------------------------------------------------------\n");
+    }
 }
 int main(){
 	setlocale(LC_ALL, "Portuguese_Brazil");
@@ -101,7 +147,7 @@ while(!entrada_valida){
         printf("\nQuantos alunos deseja cadastrar: ");
         if(scanf("%d", &qtd) != 1) {
             printf("Erro: Digite apenas números!\n");
-             while(getchar() != '\n');
+           
         } else if(qtd < 1) {
             printf("Erro: Opção deve ser maior que  0!\n");
         } else {
@@ -120,6 +166,17 @@ while(!entrada_valida){
 	preencher_dados(pessoas, qtd);
 	exibir_todos(pessoas, qtd);
 	exibir_maior_idade(pessoas, qtd);
+	exibir_ordenado(pessoas, qtd);
+	ordenar_por_idade( pessoas, qtd);
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	free(pessoas);
