@@ -22,6 +22,11 @@ void maiuscula(char *str){
 		str[i] = toupper((unsigned char)str[i]);
 	}
 }
+void continuar(){
+    printf("\nPressione Enter para continuar...");
+    while(getchar() != '\n');
+    printf("\n");
+}
 
 void preencher_dados(Cadastro *pessoas, int qtd){
 
@@ -76,6 +81,7 @@ void exibir_todos(Cadastro *pessoas, int qtd){
 			printf("%02d     | %-40s | %d anos\n", i+1, pessoas[i].nome, pessoas[i].idade);
 			printf("----------------------------------------------------------\n");
 		}
+		continuar();
 }
 
 void exibir_maior_idade(Cadastro *pessoas,int qtd){
@@ -90,6 +96,7 @@ void exibir_maior_idade(Cadastro *pessoas,int qtd){
 				
 			}
 		}
+			continuar();
 }
 void exibir_ordenado(Cadastro *pessoas,int qtd){
 	
@@ -168,14 +175,6 @@ while(!entrada_valida){
 	exibir_maior_idade(pessoas, qtd);
 	exibir_ordenado(pessoas, qtd);
 	ordenar_por_idade( pessoas, qtd);
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
