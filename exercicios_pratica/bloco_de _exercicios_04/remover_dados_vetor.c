@@ -101,7 +101,40 @@ void exibir_todos(Cadastro *pessoas, int qtd){
 			printf("----------------------------------------------------------\n");
 		}
 }
+void remover_dados(Cadastro *pessoas,int *qtd){
+	int indice, entrada = 0;
 
+	while(!entrada){
+			printf("Informe o nº do índice do nome que deseja remover: ");
+		if(scanf("%d", &indice) != 1){
+			printf("Válido apenas números.\n");
+			while(getchar() != '\n');
+		}else if((indice < 1) || (indice > *qtd )){
+			printf("Informe um número válido.\n");
+		}else{
+			entrada = 1;
+		}
+    	while(getchar() != '\n');
+	}
+	
+	for(int i = indice - 1; i < *qtd - 1; i++){
+		// Copia quem está na frente (i+1) para a posição atual (i)
+		pessoas[i] = pessoas[i + 1];
+    }
+    
+	(*qtd)--;
+}
+void exibir_atualizado(Cadastro *pessoas, int qtd){
+	
+	printf("\n\n<<- RELATORIO DE ALUNOS  ->>\n");
+    printf("----------------------------------------------------------\n");
+    printf("INDICE | NOME                                     | IDADE\n");
+    printf("----------------------------------------------------------\n");
+		for(int i = 0; i < qtd; i++){
+			printf("%02d     | %-40s | %d anos\n", i+1, pessoas[i].nome, pessoas[i].idade);
+			printf("----------------------------------------------------------\n");
+		}
+}
 int main(){
 	setlocale(LC_ALL, "Portuguese_Brazil");
 	Cadastro *pessoas;
@@ -117,8 +150,8 @@ int main(){
 
 	preencher_dados(pessoas, qtd);
 	exibir_todos(pessoas, qtd);
-
-	
+	remover_dados(pessoas, &qtd);
+	exibir_atualizado(pessoas, qtd);
 	
 	free(pessoas);
 	return 0;
