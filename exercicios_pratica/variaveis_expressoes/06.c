@@ -10,12 +10,12 @@ int main(void){
 	
 	float c, f;
 	
-	printf("Temeratua em °c: ");
+	printf("Temperatua em °C: ");
 	scanf("%f", &c);
 	
 	f = c * (9.0/5.0) + 32.0;
 	
-	printf("Temperatura em °f: %f\n", f);
+	printf("Temperatura em °F: %f\n", f);
 	
 	
 	return 0;
