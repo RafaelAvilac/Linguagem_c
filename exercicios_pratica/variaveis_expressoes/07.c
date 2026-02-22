@@ -10,7 +10,7 @@ int main(void){
 	
 	double c, f;
 	
-	printf("Temperatua em °F: ");
+	printf("Temperatura em °F: ");
 	scanf("%lf", &f);
 	
 	c =  5.0 * (f - 32.0)/9.0;

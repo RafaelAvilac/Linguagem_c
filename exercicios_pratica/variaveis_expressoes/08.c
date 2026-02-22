@@ -10,7 +10,7 @@ int main(void){
 	
 	double c, k;
 	
-	printf("Temperatua em °K: ");
+	printf("Temperatura em °K: ");
 	scanf("%lf", &k);
 	
 	c = k - ZERO_ABSOLUTO;
