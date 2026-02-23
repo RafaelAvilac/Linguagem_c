@@ -13,7 +13,7 @@ int main(void){
 	
 	radianos = (angulo * PI) / 180;
 	
-	printf("Raio: %.2lf", radianos);
+	printf("Radiano: %.2lf", radianos);
 	
 	return 0;
 }
