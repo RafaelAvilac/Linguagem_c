@@ -14,7 +14,7 @@ int main(void){
 	
 	m_3 = l / LITROS_PARA_M3;
 	
-	printf("Convercao em metros cubicos: %lf\n", m_3);
+	printf("Conversao em metros cubicos: %lf\n", m_3);
 	
 	return 0;
 } 
