@@ -8,6 +8,7 @@ o valor da hipotenusa atraves da equacao. Imprima o resultado dessa operacao.*/
 int main(void){
 	
 	double a, b, hipotenusa;
+	
 	printf("Informe os catetos a e b de um triangulo:\n");
 	scanf("%lf %lf", &a, &b);
 	

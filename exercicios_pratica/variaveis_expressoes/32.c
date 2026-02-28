@@ -14,8 +14,7 @@ int main(void){
 	 antecessor_dobro = n * 2 - 1;
 	 resultado =  sucessor_triplo + antecessor_dobro;
 	 
-	 printf("Resultado: %d", resultado);
-	
+	 printf("Resultado: %d\n", resultado);
 	
 	return 0;
 }

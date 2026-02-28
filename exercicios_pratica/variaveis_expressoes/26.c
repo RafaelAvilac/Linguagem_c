@@ -12,7 +12,7 @@ int main(void){
 	
 	h = m2 * CONV_H;
 	
-	printf("Conversao hectares: %lf", h);
+	printf("Conversao hectares: %lf\n", h);
 	
 	return 0;
 }

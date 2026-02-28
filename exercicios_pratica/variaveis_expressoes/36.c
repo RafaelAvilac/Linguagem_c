@@ -10,12 +10,12 @@ int main(void){
 	
 	double altura, raio, volume;
 	
-	printf("Informe a altura e o raio de um cilindro circular:\n"),
+	printf("Informe a altura e o raio de um cilindro circular:\n");
 	scanf("%lf %lf", &altura, &raio);
 	
 	volume = PI * (pow(raio, 2) * altura);
 	
-	printf("O volume de um cilindro circular e: %lf", volume);
+	printf("O volume de um cilindro circular e: %lf\n", volume);
 	
 	return 0;
 }

@@ -12,7 +12,7 @@ int main(void){
 	printf("Informe um valor de area em acres: ");
 	scanf("%lf", &acres);
 	
-	mt_2 = acres * 4048.58;
+	mt_2 = acres * CONV_MT ;
 	
 	printf("Conversao metros: %.2lf\n", mt_2);
 	
