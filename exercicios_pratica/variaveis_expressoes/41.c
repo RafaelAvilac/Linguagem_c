@@ -9,7 +9,7 @@ int main(void){
 		
 	float horas_mes, valor_horas; 
 	
-	printf("Informeo valor da hora de trabalho (em reais) e numero de horas trabalhadas no mes:\n");
+	printf("Informe o valor da hora de trabalho (em reais) e numero de horas trabalhadas no mes:\n");
 	scanf("%f %f", &valor_horas, &horas_mes);
 	
 	float valor_adicional = valor_horas * horas_mes * ADICIONAL;

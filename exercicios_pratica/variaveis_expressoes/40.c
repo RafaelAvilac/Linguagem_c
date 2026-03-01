@@ -16,9 +16,7 @@ int main(void){
 	imposto_pagar = (double) dias * VALOR_DIA * IMPOSTO;
 	total_receber = (double) dias * VALOR_DIA - imposto_pagar;
 	
-	printf("Quantia liquida que devera ser paga: %.2lf", total_receber);
-	
-	
+	printf("Quantia liquida que devera ser paga: %.2lf\n", total_receber);
 	
 	return 0;
 }

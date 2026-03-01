@@ -12,7 +12,7 @@ int main(void){
 	printf("Informe o salario de um funcionario: ");
 	scanf("%f", &salario);
 	
-	novo_salario = salario + (salario * 0.25);
+	novo_salario = salario + (salario * AUMENTO);
 	
 	printf("Novo salario com aumento de 25%%: %.2f\n", novo_salario);
 	
