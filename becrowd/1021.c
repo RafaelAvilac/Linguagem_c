@@ -13,7 +13,7 @@ conforme exemplo fornecido.
 Obs: Utilize ponto (.) para separar a parte decimal.*/
 
 #include <stdio.h>
-#include <math.h>
+
 
 int main(void) {
     double valor;

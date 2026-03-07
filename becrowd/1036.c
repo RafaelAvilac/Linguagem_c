@@ -18,15 +18,17 @@ int main(void){
 	
 	scanf("%lf %lf %lf", &a, &b, &c);         // recebe entradas
 	
-	delta = pow(b,2) - 4*a*c;                 //formula para cahar delta
-	
-	r1 = (-b + sqrt(delta)) / (2 * a);        //calculo x'.
-	r2 = (-b - sqrt(delta)) / (2 * a);        //calculo x".
+	delta = pow(b,2) - 4*a*c;                 //formula para achar delta
 	
 	if(a == 0 || delta < 0){                  // Verifica se é possível calcular 
 		printf("Impossivel calcular\n");
-		return 1;
+	
+	}else{
+	
+		r1 = (-b + sqrt(delta)) / (2 * a);        //calculo x'.
+		r2 = (-b - sqrt(delta)) / (2 * a);        //calculo x".
 	}
+
 	
 	printf("R1 = %.5lf\n", r1);
 	printf("R2 = %.5lf\n", r2);
