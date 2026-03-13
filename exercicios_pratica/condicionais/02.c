@@ -13,9 +13,9 @@ int main(void){
 	
 	if(n > 0){
 		double raiz = sqrt(n);
-		printf("Raiz quadarada: %.2f",raiz);
+		printf("Raiz quadarada: %.2lf",raiz);
 	}else{
-		printf("Numero invalido");
+		printf("Numero invalido\n");
 	}
 	
 	
