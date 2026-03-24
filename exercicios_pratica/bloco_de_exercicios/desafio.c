@@ -37,6 +37,20 @@ int main(void){
 		scanf("%f", &alunos[i].nota3);
 	}
 	
+
+	for(int i = 0; i < qtd; i++){
+		alunos[i].media = (alunos[i].nota1 + alunos[i].nota2 + alunos[i].nota3) / 3;
+	}
+		printf("Media do Aluno.\n");
+		
+	for(int i = 0; i < qtd; i++){
+		printf("Nome: %s", alunos[i].nome);
+		printf("Nota 1: %.lf", alunos[i].nota1);
+		printf("Nome: %s", alunos[i].nome);
+		printf("Nota 2: %.lf", alunos[i].nota2);
+		printf("Nome: %s", alunos[i].nome);
+		printf("Nota 3: %.lf", alunos[i].nota3);
+	}
 	
 	free(alunos);
 	return 0;
