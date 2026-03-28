@@ -1,23 +1,19 @@
-/*Leia um numero fornecido pelo usuario. Se esse numero for positivo, calcule a raiz 
-quadrada do numero. Se o numero for negativo, mostre uma mensagem dizendo que o 
-numero e invalido.*/
 #include <stdio.h>
 #include <math.h>
 
 int main(void){
 	
-	int n;
+	int numero;
+	double raiz;
 	
-	printf("Informe um numero: ");
-	scanf("%d", &n);
+	scanf("%d", &numero);
 	
-	if(n > 0){
-		double raiz = sqrt(n);
-		printf("Raiz quadarada: %.2lf",raiz);
+	if(numero > 0){
+		raiz = sqrt(numero);
+		printf("Raiz quadrada: %.2lf\n", raiz);
 	}else{
-		printf("Numero invalido\n");
+		printf("Numero invalido.\n");
 	}
-	
 	
 	return 0;
 }

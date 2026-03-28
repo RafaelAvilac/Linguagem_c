@@ -1,22 +1,21 @@
-/*01-Faca um programa que receba dois numeros e mostre qual deles ´ e o maior*/
-
-
 #include <stdio.h>
 
 int main(void){
 	
-	int n1, n2;
+	int numero1, numero2;
 	
-	printf("Informe 2 numeros:\n");
-	scanf("%d %d", &n1, &n2);
+	scanf("%d %d", &numero1, &numero2);
 	
-	if(n1 > n2){
-		printf("O numero %d eh o maior\n", n1);
-	}else if (n1 == n2){
-		printf("Os numeros %d e %d sao iguais\n", n1, n2);
+	if(numero1 > numero2){
+		printf("Numero %d eh maior\n", numero1);
+	
+	}else if(numero1 == numero2){
+		printf("Numeros %d e %d sao iguais", numero1, numero2);
+	
 	}else{
-		printf("O numero %d eh o maior\n", n2);
+		printf("Numero %d eh maior\n", numero2);
 	}
+	
 	
 	
 	return 0;
