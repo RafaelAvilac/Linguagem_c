@@ -1,7 +1,7 @@
 /*Escreva um algoritmo que leia um numero inteiro entre 100 e 999 e imprima na sa ´ ´ıda
 cada um dos algarismos que compoem o n ˜ umero*/
 // Created by rafae on 24/04/2026//
-//
+
 #include <stdio.h>
 #include <locale.h>
 int main() {
