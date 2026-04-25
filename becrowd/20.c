@@ -10,6 +10,10 @@ int main(void) {
     while (n != 1000) {
         printf("Digite um numero: ");
         scanf("%d", &n);
+        
+        	 if (n == 1000) {
+           	 break;  // Sai do loop sem processar o 1000
+       		 }
             if (n % 2 == 0) {
                 printf("%d eh par\n", n);
                 pares++;
