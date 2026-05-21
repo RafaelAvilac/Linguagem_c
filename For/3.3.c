@@ -1,5 +1,5 @@
-/*Faça um programa que some os números ímpares de 1 a 1000 e imprima a resposta. 
-O bloco de repetição deve executar no máximo 500 vezes.*/
+/*Faï¿½a um programa que some os nï¿½meros ï¿½mpares de 1 a 1000 e imprima a resposta. 
+O bloco de repetiï¿½ï¿½o deve executar no mï¿½ximo 500 vezes.*/
 
 #include<stdio.h>
 int main(){
@@ -10,7 +10,8 @@ int main(){
 		soma_impar += i;
 		cont++;
 	}
+
 	printf("Soma de numeros impar: %d\n", soma_impar);
-	printf("Bloco de repetição executou: %d\n", cont);
+	printf("Bloco de repetiï¿½ï¿½o executou: %d\n", cont);
 	return 0;
 }
