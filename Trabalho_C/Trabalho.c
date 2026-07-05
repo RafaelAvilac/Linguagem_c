@@ -1,25 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
-#define LIN 10  // Número de linhas do tabuleiro
+#define LIN 11  // Número de linhas do tabuleiro
 #define COL 10  // Número de colunas do tabuleiro
-
-// ============================================================================
-// ESTRUTURAS DE DADOS
-// ============================================================================
 
 // Struct que representa cada palavra da cruzadinha
 typedef struct {
-    char palavra[20];  // A palavra em si (ex: "MATRIZ")
-    char dica[100];    // A dica que será mostrada ao jogador
-    int linha;         // Linha onde a palavra começa no tabuleiro
-    int coluna;        // Coluna onde a palavra começa no tabuleiro
+    char palavra[20];
+    char dica[100];
+    int linha;         // Linha onde a palavra começa
+    int coluna;        // Coluna onde a palavra começa
     char direcao;      // 'V' = vertical, 'H' = horizontal
 } Palavra;
-
-// ============================================================================
-// FUNÇÕES DE MANIPULAÇÃO DO TABULEIRO
-// ============================================================================
 
 // Função que inicializa o tabuleiro com '.'
 void iniciar_tab(char tab[LIN][COL]) {
@@ -31,25 +23,6 @@ void iniciar_tab(char tab[LIN][COL]) {
     }
 }
 
-// Função que posiciona todas as palavras no tabuleiro
-void posicionar_palavras(char tab[LIN][COL], Palavra *p, int n) {
-    int i, k;
-    for (i = 0; i < n; i++) {
-        for (k = 0; k < strlen(p[i].palavra); k++) {
-            if (p[i].direcao == 'V') {
-                tab[p[i].linha + k][p[i].coluna] = p[i].palavra[k];
-            } else {
-                tab[p[i].linha][p[i].coluna + k] = p[i].palavra[k];
-            }
-        }
-    }
-}
-
-// ============================================================================
-// FUNÇÕES DE EXIBIÇÃO NA TELA
-// ============================================================================
-
-// Função que imprime o tabuleiro escondido (esqueleto)
 // Mostra '#' onde há letras e '.' onde é vazio
 void imprimir_tabuleiro_vazio(char tab[LIN][COL]) {
     int i, j;
@@ -65,7 +38,20 @@ void imprimir_tabuleiro_vazio(char tab[LIN][COL]) {
     }
 }
 
-// Função que imprime o tabuleiro completo com as respostas
+void posicionar_palavras(char tab[LIN][COL], Palavra p[5], int n) {
+    int i, j;
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < strlen(p[i].palavra); j++) {
+            if (p[i].direcao == 'V') {
+                tab[p[i].linha + j][p[i].coluna] = p[i].palavra[j];
+            } else {
+                tab[p[i].linha][p[i].coluna + j] = p[i].palavra[j];
+            }
+        }
+    }
+}
+
+//tabuleiro completo com as respostas
 void imprimir_tabuleiro(char tab[LIN][COL]) {
     int i, j;
     for (i = 0; i < LIN; i++) {
@@ -76,8 +62,8 @@ void imprimir_tabuleiro(char tab[LIN][COL]) {
     }
 }
 
-// Função que mostra as dicas numeradas
-void mostrar_dicas(Palavra *p, int n) {
+//dicas numeradas
+void mostrar_dicas(Palavra p[5], int n) {
     int i;
     printf("\n==== DICAS ====\n");
     for (i = 0; i < n; i++) {
@@ -85,17 +71,13 @@ void mostrar_dicas(Palavra *p, int n) {
     }
 }
 
-// ============================================================================
-// LÓGICA PRINCIPAL DO JOGO
-// ============================================================================
-
-// Função que gerencia os palpites do jogador
-void verificar_palpite(Palavra *p, int n) {
-    int escolha;
-    char palpite[20];
+//palpites do jogador
+void verificar_palpite(Palavra p[5], int n) {
+    int escolha; // qual dica o jogador escolheu
+    char palpite[20]; // a resposta digitada pelo jogador
     int cont_corretos = 0;
     int tentativas = 0;
-    int acertou[5] = {0, 0, 0, 0, 0};  // controla quais palavras já foram acertadas
+    int acertou[5] = {0, 0, 0, 0, 0};  // quais palavras já foram acertadas
 
     do {
         printf("\nTentativas restantes: %d\n", 8 - tentativas);
@@ -109,7 +91,7 @@ void verificar_palpite(Palavra *p, int n) {
             continue;
         }
 
-        if (acertou[escolha - 1]) {
+        if (acertou[escolha - 1]) {  // jogador digita de 1 a 5, mas o vetor é de 0 a 4
             printf("Voce ja acertou essa palavra!\n");
             continue;  // não perde tentativa
         }
@@ -119,7 +101,7 @@ void verificar_palpite(Palavra *p, int n) {
         while (getchar() != '\n');
         tentativas++;
 
-        if (strcmp(palpite, p[escolha - 1].palavra) == 0) {
+        if (strcmp(palpite, p[escolha - 1].palavra) == 0) { //compara as duas strings caractere por caractere e retorna 0 se forem idênticas
             printf("Correto!\n");
             cont_corretos++;
             acertou[escolha - 1] = 1;
@@ -137,58 +119,55 @@ void verificar_palpite(Palavra *p, int n) {
     }
 }
 
-// ============================================================================
-// FUNÇÃO DE ENTRADA (MAIN)
-// ============================================================================
-
 int main(void) {
     char tab[LIN][COL];
     Palavra p[5];
+    int n = 5;
 
     // Palavra 0: MATRIZ — vertical, começa em (0,1)
     strcpy(p[0].palavra, "MATRIZ");
-    strcpy(p[0].dica, "Arranjo bidimensional de dados");
+    strcpy(p[0].dica, "Arranjo bidimensional de dados (VERTICAL)");
     p[0].linha   = 0;
     p[0].coluna  = 1;
     p[0].direcao = 'V';
 
     // Palavra 1: STRUCT — horizontal, começa em (2,0)
     strcpy(p[1].palavra, "STRUCT");
-    strcpy(p[1].dica, "Agrupa variaveis de tipos diferentes");
+    strcpy(p[1].dica, "Agrupa variaveis de tipos diferentes (HORIZONTAL)");
     p[1].linha   = 2;
     p[1].coluna  = 0;
     p[1].direcao = 'H';
 
     // Palavra 2: FUNCAO — vertical, começa em (1,3)
     strcpy(p[2].palavra, "FUNCAO");
-    strcpy(p[2].dica, "Bloco de codigo reutilizavel");
+    strcpy(p[2].dica, "Bloco de codigo reutilizavel (VERTICAL)");
     p[2].linha   = 1;
     p[2].coluna  = 3;
     p[2].direcao = 'V';
 
     // Palavra 3: PONTEIRO — horizontal, começa em (6,2)
     strcpy(p[3].palavra, "PONTEIRO");
-    strcpy(p[3].dica, "Armazena um endereco de memoria");
+    strcpy(p[3].dica, "Armazena um endereco de memoria (HORIZONTAL)");
     p[3].linha   = 6;
     p[3].coluna  = 2;
     p[3].direcao = 'H';
 
     // Palavra 4: VARIAVEL — vertical, começa em (2,7)
     strcpy(p[4].palavra, "VARIAVEL");
-    strcpy(p[4].dica, "Espaco na memoria com nome");
-    p[4].linha   = 2;
+    strcpy(p[4].dica, "Espaco na memoria com nome(VERTICAL)");
+    p[4].linha   = 3;
     p[4].coluna  = 7;
     p[4].direcao = 'V';
 
-    // Fluxo de Execução do Jogo
-    iniciar_tab(tab);                // 1. Preenche tabuleiro com '.'
-    posicionar_palavras(tab, p, 5); // 2. Posiciona as palavras
-    imprimir_tabuleiro_vazio(tab);  // 3. Mostra esqueleto ao jogador
-    mostrar_dicas(p, 5);            // 4. Mostra as dicas
-    verificar_palpite(p, 5);        // 5. Jogador tenta adivinhar
+    printf("\n====== PALAVRA CRUZADA ======\n");
+    iniciar_tab(tab);
+    posicionar_palavras(tab, p, n);
+    imprimir_tabuleiro_vazio(tab);
+    mostrar_dicas(p, n);
+    verificar_palpite(p, n);
 
     printf("\n==== TABULEIRO COMPLETO ====\n");
-    imprimir_tabuleiro(tab);        // 6. Revela tabuleiro no final
+    imprimir_tabuleiro(tab);
 
     return 0;
 }
